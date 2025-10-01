@@ -62,20 +62,27 @@ public class HelloController {
     }
 
     public void btnMi(ActionEvent actionEvent) {
+        input1 = Double.parseDouble(txtCalculate.getText());
         operator = "-";
+        txtCalculate.setText("");
     }
 
     public void btnMu(ActionEvent actionEvent) {
+        input1 = Double.parseDouble(txtCalculate.getText());
         operator = "*";
+        txtCalculate.setText("");
     }
 
     public void btnDi(ActionEvent actionEvent) {
+        input1 = Double.parseDouble(txtCalculate.getText());
         operator = "/";
-
+        txtCalculate.setText("");
     }
 
     public void btnPr(ActionEvent actionEvent) {
+        input1 = Double.parseDouble(txtCalculate.getText());
         operator = "%";
+        txtCalculate.setText("");
     }
 
     public void btnCo(ActionEvent actionEvent) {
