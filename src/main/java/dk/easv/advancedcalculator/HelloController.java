@@ -9,6 +9,11 @@ public class HelloController {
 
     @FXML
     private TextField txtCalculate;
+    private boolean state = true;
+    private double input1;
+    private double input2;
+    private String operator;
+
 
     public void btn0(ActionEvent actionEvent) {
         txtCalculate.setText(txtCalculate.getText()+"0");
@@ -51,22 +56,32 @@ public class HelloController {
     }
 
     public void btnPl(ActionEvent actionEvent) {
-        txtCalculate.setText("+");
+        input1 = Double.parseDouble(txtCalculate.getText());
+        System.out.println(input1);
+        operator = "+";
+
     }
 
     public void btnMi(ActionEvent actionEvent) {
+        operator = "-";
     }
 
     public void btnMu(ActionEvent actionEvent) {
+        operator = "*";
     }
 
     public void btnDi(ActionEvent actionEvent) {
+        operator = "/";
+
     }
 
     public void btnPr(ActionEvent actionEvent) {
+        operator = "%";
     }
 
     public void btnCo(ActionEvent actionEvent) {
+        txtCalculate.setText(txtCalculate.getText()+".");
+
     }
 
     public void btnClear(ActionEvent actionEvent) {
