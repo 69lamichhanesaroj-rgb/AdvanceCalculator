@@ -57,9 +57,8 @@ public class HelloController {
 
     public void btnPl(ActionEvent actionEvent) {
         input1 = Double.parseDouble(txtCalculate.getText());
-        System.out.println(input1);
         operator = "+";
-
+        txtCalculate.setText("");
     }
 
     public void btnMi(ActionEvent actionEvent) {
@@ -92,5 +91,23 @@ public class HelloController {
     }
 
     public void btnEq(ActionEvent actionEvent) {
+        input2 = Double.parseDouble(txtCalculate.getText());
+        txtCalculate.setText("");
+        switch (operator) {
+            case "+":
+                txtCalculate.setText(String.valueOf(input1+input2));
+                break;
+            case "-":
+                txtCalculate.setText(String.valueOf(input1-input2));
+                break;
+            case "*":
+                txtCalculate.setText(String.valueOf(input1*input2));
+                break;
+            case "/":
+                txtCalculate.setText(String.valueOf(input1/input2));
+                break;
+            case "%":
+                txtCalculate.setText(String.valueOf(input1%input2));
+        }
     }
 }
