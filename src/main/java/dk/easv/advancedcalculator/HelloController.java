@@ -11,6 +11,7 @@ public class HelloController {
     private boolean state;
     private double input1;
     private double input2;
+    private double result;
     private String operator;
 
 
@@ -170,29 +171,40 @@ public class HelloController {
             txtCalculate.setText("");
             switch (operator) {
                 case "+":
-                    txtCalculate.setText(String.valueOf(input1 + input2));
+                    result = input1 + input2;
                     break;
                 case "-":
-                    txtCalculate.setText(String.valueOf(input1 - input2));
+                    result = input1 - input2;
                     break;
                 case "*":
-                    txtCalculate.setText(String.valueOf(input1 * input2));
+                    result = input1 * input2;
                     break;
                 case "/":
                     if (input2 == 0) {
                         txtCalculate.setText("Cannot divide by zero");
+                        input1 = 0;
+                        input2 = 0;
+                        operator = "";
+                        state = false;
                     }
                     else {
-                        txtCalculate.setText(String.valueOf(input1 / input2));
+                    result = input1 / input2;
                     }
                     break;
                 case "%":
-                    txtCalculate.setText(String.valueOf(input1 % input2));
+                    result = input1 % input2;
                     break;
+            }
+            if (result == (long) result) {
+                txtCalculate.setText(String.format("%d", (long) result));
+            }
+            else {
+                txtCalculate.setText(String.valueOf(result));
             }
         }
         input1 = 0;
         input2 = 0;
+        result = 0;
         operator = "";
         state = false;
     }
