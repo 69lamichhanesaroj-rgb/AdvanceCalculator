@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" minHeight="480.0" minWidth="400.0" prefHeight="482.0" prefWidth="387.0" spacing="20.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.advancedcalculator.HelloController">
+<VBox alignment="CENTER" minHeight="480.0" minWidth="400.0" prefHeight="482.0" prefWidth="387.0" spacing="20.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dk.easv.advancedcalculator.CalculatorController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -43,7 +43,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnDi" text="/">
+            <Button fx:id="Di" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnDi" style="-fx-background-color: #E4983C;" text="/" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -79,7 +79,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMu" text="X">
+            <Button fx:id="Mu" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMu" style="-fx-background-color: #E4983C;" text="X" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
@@ -115,9 +115,9 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMi" text="-">
+            <Button fx:id="Mi" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMi" style="-fx-background-color: #E4983C;" text="-" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="24.0" />
                </font>
                <HBox.margin>
                   <Insets left="5.0" right="5.0" />
@@ -151,7 +151,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnPl" text="+">
+            <Button fx:id="Pl" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnPl" style="-fx-background-color: #E4983C;" text="+" textFill="WHITE">
                <font>
                   <Font size="24.0" />
                </font>
