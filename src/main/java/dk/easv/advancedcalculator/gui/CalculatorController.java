@@ -1,5 +1,6 @@
-package dk.easv.advancedcalculator;
+package dk.easv.advancedcalculator.gui;
 
+import dk.easv.advancedcalculator.bll.CalculatorLogic;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -52,6 +53,8 @@ public class CalculatorController {
     private double input2;
     private double result;
     private String operator;
+
+    private CalculatorLogic Logic = new CalculatorLogic();
 
     public void btn0() {
         if (!txtCalculate.getText().startsWith("0") || txtCalculate.getLength()!=1)
@@ -129,37 +132,6 @@ public class CalculatorController {
         else
             txtCalculate.setText(txtCalculate.getText()+"9");
         higllightButton(b9);
-    }
-
-    public void ClearOperatorHighlights() {
-        Pl.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
-        Mu.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
-        Mi.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
-        Di.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
-        Pr.setStyle("-fx-background-color: lightgray;");
-        PM.setStyle("-fx-background-color: lightgray;");
-        Cl.setStyle("-fx-background-color: lightgray;");
-        b0.setStyle("-fx-background-color: lightgray;");
-        b1.setStyle("-fx-background-color: lightgray;");
-        b2.setStyle("-fx-background-color: lightgray;");
-        b3.setStyle("-fx-background-color: lightgray;");
-        b4.setStyle("-fx-background-color: lightgray;");
-        b5.setStyle("-fx-background-color: lightgray;");
-        b6.setStyle("-fx-background-color: lightgray;");
-        b7.setStyle("-fx-background-color: lightgray;");
-        b8.setStyle("-fx-background-color: lightgray;");
-        b9.setStyle("-fx-background-color: lightgray;");
-        Co.setStyle("-fx-background-color: lightgray;");
-        Eq.setStyle("-fx-background-color: lightgray;");
-    }
-
-    public void higllightOperator(Button button) {
-        ClearOperatorHighlights();
-        button.setStyle("-fx-background-color: gray; -fx-text-fill: #3d1679;");
-    }
-    public void higllightButton(Button button) {
-        ClearOperatorHighlights();
-        button.setStyle("-fx-background-color: gray;");
     }
 
     public void btnPl() {
@@ -240,7 +212,7 @@ public class CalculatorController {
         result = 0;
         operator = "";
         state = false;
-        ClearOperatorHighlights();
+        higllightButton(Cl);
     }
 
     public void btnPM() {
@@ -253,42 +225,13 @@ public class CalculatorController {
         higllightOperator(PM);
 
     }
+
     public void btnEq() {
         if (state) {
             input2 = Double.parseDouble(txtCalculate.getText());
             txtCalculate.setText("");
-            switch (operator) {
-                case "+":
-                    result = input1 + input2;
-                    break;
-                case "-":
-                    result = input1 - input2;
-                    break;
-                case "*":
-                    result = input1 * input2;
-                    break;
-                case "/":
-                    if (input2 == 0) {
-                        txtCalculate.setText("Cannot divide by zero");
-                        input1 = 0;
-                        input2 = 0;
-                        operator = "";
-                        state = false;
-                    }
-                    else {
-                    result = input1 / input2;
-                    }
-                    break;
-                case "%":
-                    result = input1 % input2;
-                    break;
-            }
-            if (result == (long) result) {
-                txtCalculate.setText(String.format("%d", (long) result));
-            }
-            else {
-                txtCalculate.setText(String.valueOf(result));
-            }
+            String result = Logic.calculate(input1, input2, operator);
+            txtCalculate.setText(result);
         }
         input1 = 0;
         input2 = 0;
@@ -297,5 +240,44 @@ public class CalculatorController {
         state = false;
         ClearOperatorHighlights();
         higllightButton(Eq);
+    }
+
+    public void ClearOperatorHighlights() {
+        Pl.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
+        Mu.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
+        Mi.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
+        Di.setStyle("-fx-background-color: #3d1679; fx-text-fill: black;");
+        Pr.setStyle("-fx-background-color: lightgray;");
+        PM.setStyle("-fx-background-color: lightgray;");
+        Cl.setStyle("-fx-background-color: lightgray;");
+        b0.setStyle("-fx-background-color: lightgray;");
+        b1.setStyle("-fx-background-color: lightgray;");
+        b2.setStyle("-fx-background-color: lightgray;");
+        b3.setStyle("-fx-background-color: lightgray;");
+        b4.setStyle("-fx-background-color: lightgray;");
+        b5.setStyle("-fx-background-color: lightgray;");
+        b6.setStyle("-fx-background-color: lightgray;");
+        b7.setStyle("-fx-background-color: lightgray;");
+        b8.setStyle("-fx-background-color: lightgray;");
+        b9.setStyle("-fx-background-color: lightgray;");
+        Co.setStyle("-fx-background-color: lightgray;");
+        Eq.setStyle("-fx-background-color: lightgray;");
+    }
+
+    public void higllightOperator(Button button) {
+        ClearOperatorHighlights();
+        button.setStyle("-fx-background-color: gray; -fx-text-fill: #3d1679;");
+    }
+    public void higllightButton(Button button) {
+        ClearOperatorHighlights();
+        button.setStyle("-fx-background-color: gray;");
+    }
+
+    public CalculatorLogic getLogic() {
+        return Logic;
+    }
+
+    public void setLogic(CalculatorLogic logic) {
+        Logic = logic;
     }
 }
