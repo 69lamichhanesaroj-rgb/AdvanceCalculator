@@ -51,10 +51,9 @@ public class CalculatorController {
     private boolean state;
     private double input1;
     private double input2;
-    private double result;
     private String operator;
 
-    private CalculatorLogic Logic = new CalculatorLogic();
+    private final CalculatorLogic Logic = new CalculatorLogic();
 
     public void btn0() {
         if (!txtCalculate.getText().startsWith("0") || txtCalculate.getLength()!=1)
@@ -209,7 +208,6 @@ public class CalculatorController {
         txtCalculate.setText("0");
         input1 = 0;
         input2 = 0;
-        result = 0;
         operator = "";
         state = false;
         higllightButton(Cl);
@@ -235,7 +233,6 @@ public class CalculatorController {
         }
         input1 = 0;
         input2 = 0;
-        result = 0;
         operator = "";
         state = false;
         ClearOperatorHighlights();
@@ -271,13 +268,5 @@ public class CalculatorController {
     public void higllightButton(Button button) {
         ClearOperatorHighlights();
         button.setStyle("-fx-background-color: gray;");
-    }
-
-    public CalculatorLogic getLogic() {
-        return Logic;
-    }
-
-    public void setLogic(CalculatorLogic logic) {
-        Logic = logic;
     }
 }
