@@ -35,7 +35,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Pr" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnPr" style="-fx-background-color: lightgray;" text="\%" textFill="black">
+            <Button fx:id="Pr" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#operatorBtnClick" style="-fx-background-color: lightgray;" text="\%" textFill="black" userData="\%">
                <font>
                   <Font size="24.0" />
                </font>
@@ -43,43 +43,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Di" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnDi" style="-fx-background-color: #3d1679;" text="/" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </Button>
-         </children>
-      </HBox>
-      <HBox>
-         <children>
-            <Button fx:id="b7" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn7" style="-fx-background-color: lightgray;" text="7">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="b8" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn8" style="-fx-background-color: lightgray;" text="8">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="b9" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn9" style="-fx-background-color: lightgray;" text="9">
-               <font>
-                  <Font size="24.0" />
-               </font>
-               <HBox.margin>
-                  <Insets left="5.0" right="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="Mu" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMu" style="-fx-background-color: #3d1679;" text="X" textFill="WHITE">
+            <Button fx:id="Di" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#operatorBtnClick" style="-fx-background-color: #3d1679;" text="/" textFill="WHITE" userData="/">
                <font>
                   <Font size="24.0" />
                </font>
@@ -91,7 +55,7 @@
       </HBox>
       <HBox>
          <children>
-            <Button fx:id="b4" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn4" style="-fx-background-color: lightgray;" text="4">
+            <Button fx:id="b7" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="7" userData="7">
                <font>
                   <Font size="24.0" />
                </font>
@@ -99,7 +63,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="b5" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn5" style="-fx-background-color: lightgray;" text="5">
+            <Button fx:id="b8" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="8" userData="8">
                <font>
                   <Font size="24.0" />
                </font>
@@ -107,7 +71,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="b6" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn6" style="-fx-background-color: lightgray;" text="6">
+            <Button fx:id="b9" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="9" userData="9">
                <font>
                   <Font size="24.0" />
                </font>
@@ -115,7 +79,43 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Mi" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnMi" style="-fx-background-color: #3d1679;" text="-" textFill="WHITE">
+            <Button fx:id="Mu" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#operatorBtnClick" style="-fx-background-color: #3d1679;" text="X" textFill="WHITE" userData="*">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Button fx:id="b4" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="4" userData="4">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="b5" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="5" userData="5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="b6" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="6" userData="6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="Mi" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#operatorBtnClick" style="-fx-background-color: #3d1679;" text="-" textFill="WHITE" userData="-">
                <font>
                   <Font name="System Bold" size="24.0" />
                </font>
@@ -127,7 +127,7 @@
       </HBox>
       <HBox>
          <children>
-            <Button fx:id="b1" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn1" style="-fx-background-color: lightgray;" text="1">
+            <Button fx:id="b1" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="1" userData="1">
                <font>
                   <Font size="24.0" />
                </font>
@@ -135,7 +135,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="b2" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn2" style="-fx-background-color: lightgray;" text="2">
+            <Button fx:id="b2" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="2" userData="2">
                <font>
                   <Font size="24.0" />
                </font>
@@ -143,7 +143,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="b3" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btn3" style="-fx-background-color: lightgray;" text="3">
+            <Button fx:id="b3" alignment="CENTER" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#numberBtnClick" style="-fx-background-color: lightgray;" text="3" userData="3">
                <font>
                   <Font size="24.0" />
                </font>
@@ -151,7 +151,7 @@
                   <Insets left="5.0" right="5.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Pl" contentDisplay="TOP" minWidth="80.0" mnemonicParsing="false" onAction="#btnPl" style="-fx-background-color: #3d1679;" text="+" textFill="WHITE">
+            <Button fx:id="Pl" minWidth="80.0" mnemonicParsing="false" onAction="#operatorBtnClick" style="-fx-background-color: #3d1679;" text="+" textFill="WHITE" userData="+">
                <font>
                   <Font size="24.0" />
                </font>
