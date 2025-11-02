@@ -14,7 +14,9 @@ public class CalculatorApp extends Application {
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Calculator");
         stage.setScene(scene);
-        stage.setResizable(false);
+        stage.setResizable(true);
+        stage.setMinWidth(400);
+        stage.setMinHeight(575);
         stage.show();
     }
 }
